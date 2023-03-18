@@ -39,15 +39,7 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
