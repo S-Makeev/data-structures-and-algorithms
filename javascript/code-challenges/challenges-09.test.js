@@ -11,13 +11,13 @@ E.g. [4,2,7,5,9,2] -> 9
 const maxInArray = (arr) => {
   // Solution code here...
   let maxNum = arr.reduce((acc, current) => {
-    if (current > acc){
+    if (current > acc) {
       return current;
     }
     else {
       return acc;
     }
-  },arr[0]);
+  }, arr[0]);
 
   return maxNum;
 };
@@ -29,7 +29,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -150,7 +151,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let hasChildren = false;
 
+  arr.forEach(pers => {
+    if (pers.name === character) {
+      let values = Object.values(pers);
+      values.length === 4 ? hasChildren = true : hasChildren;
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
