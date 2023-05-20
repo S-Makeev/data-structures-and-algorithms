@@ -9,9 +9,10 @@ Write a function called addTwo that takes in an array and adds two to every valu
 const addTwo = (arr) => {
   // Solution code here...
   let newArr = [];
-  for(let i = 0; i < arr.length; i++)
+  for(let i = 0; i< arr.length; i++)
   {
-    newArr.push(arr[i]+2);
+    newArr.push(arr[i] + 2);
+
   }
   return newArr;
 };
@@ -26,8 +27,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  let numArr =  arr.filter(int => typeof int === 'number');
-  return numArr;
+  let newArr = arr.filter((nums) => typeof nums === 'number');
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +41,7 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let newArr = arr.filter(stringArr => stringArr.includes('and'));
+  let newArr = arr.filter((words) => words.includes('and'));
   return newArr;
 };
 
@@ -54,8 +55,9 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let newArr = arr.filter(int => int % 2 !==0);
+  let newArr = arr.filter((oddNum) => (oddNum % 2));
   return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +70,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  let newArr = arr.filter(arr => !forbiddenValues.includes(arr));
+  let newArr = arr.filter((x) => !forbiddenValues.includes(x));
   return newArr;
 };
 
@@ -113,6 +115,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter((x) => x.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -260,7 +263,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
