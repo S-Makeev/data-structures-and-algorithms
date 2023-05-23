@@ -39,15 +39,7 @@ For example: 'Cat' would come before 'apple'
 
 const sortNames = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +52,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a > b? 1 : -1);
+  return arr.sort((a,b) => a > b? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,7 +65,8 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) => {
   // Solution code here...
-  return arr.sort((a,b) => a < b ? 1 : -1);
+  return arr.sort((a, b) => b > a? 1 : -1);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,16 +80,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
-  return arr.sort((a, b) => {
-    if (a < b) {
-      return -1;
-    }
-    if (a > b) {
-      return 1;
-    }
-    return 0;
-  });
+
+  return arr.sort((a,b) => a > b? 1: -1);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +100,8 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a.price > b.price ? 1 : -1);
+  return arr.sort((a,b) => a.price > b.price? 1: -1);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,7 +114,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1);
+  return arr.sort((a,b) => a.toLowerCase() > b.toLowerCase() ? 1: -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,9 +125,8 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a.length > b.length ? 1 : -1);
+  return arr.sort((a,b) => a.length > b.length ? 1: -1);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -151,8 +137,8 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   // Solution code here...
-  return arr.sort((a, b) => a.toString().length > b.toString().length ? 1 : -1);
 
+  return arr.sort((a, b) => a.toString().length > b.toString().length ? 1 : -1);
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -175,6 +161,7 @@ const people = [
 
 const sortPeople = (arr) => {
   // Solution code here...
+  return arr.sort((a,b) => a.lastName > b.lastName? 1 : -1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -329,7 +316,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
