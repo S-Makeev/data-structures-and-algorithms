@@ -75,5 +75,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
 
-## [array-reverse](https://canvas.instructure.com/courses/6945398/assignments/37843548)
-   [array-insert-shift]()
+## [array-reverse](./array-insert-shift/README.md)
+   [array-insert-shift](./array-insert-shift/README.md)
