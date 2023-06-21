@@ -77,3 +77,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ## [array-reverse](./array-insert-shift/README.md)
    [array-insert-shift](./array-insert-shift/README.md)
+   [linked_list_insertions](./data_structures/linked_list_insertions/README.MD)
