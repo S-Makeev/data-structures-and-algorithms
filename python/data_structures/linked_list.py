@@ -1,7 +1,10 @@
+from collections import Counter
+
 class Node:
     def __init__(self, value, _next=None):
         self.value = value
         self.next = _next
+
 class LinkedList:
 
     def __init__(self, head=None, values=None, insert=None):
@@ -26,6 +29,7 @@ class LinkedList:
                 return True
             current = current.next
         return False
+
     # append arguments: new value, adds new node with given value to the end of the list
     #if/else added with search from chat GPT
     def append(self, value):
@@ -67,5 +71,29 @@ class LinkedList:
             new_node.next = temp
         except Exception as e:
                     raise TargetError
+
+    def kth_from_end(self, k):
+        try:
+             if self.head == None:
+                return Exception
+
+             else:
+                  current = self.head
+                  count = 0
+                  while current.next:
+                        count += 1
+                        current = current.next
+                  difference = count - k
+
+             if k > count:
+                 raise TargetError
+
+             current_2 = self.head
+             for node in range(1, difference + 1):
+               current_2 = current_2.next
+             return current_2.value
+        except Exception as e:
+                    raise TargetError
+
 class TargetError(Exception):
         pass
