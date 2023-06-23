@@ -11,17 +11,8 @@ class LinkedList:
         self.head = None
     def insert(self, value):
         self.head = Node(value, self.head)
-    def __str__(self):
-        if self.head == None:
-         return "NULL"
-        else:
-            current = self.head
-            output = ""
-            while current:
-                output += f"{{ {current.value} }} -> "
-                current = current.next
-            output += "NULL"
-            return output
+
+
     def includes(self, value):
         current = self.head
         while current:
@@ -94,6 +85,34 @@ class LinkedList:
              return current_2.value
         except Exception as e:
                     raise TargetError
+
+    def __str__(self):
+         result = ""
+         current = self.head
+         while current:
+             result += str(current.value) + " -> "
+             current = current.next
+         result += "None"
+         return result
+
+    def zip_lists(list1, list2):
+        current1 = list1.head
+        current2 = list2.head
+        if not current1 and not current2:
+            return None
+        results_LL = LinkedList()
+        while current1 and current2:
+            results_LL.append(current1.value)
+            results_LL.append(current2.value)
+            current1 = current1.next
+            current2 = current2.next
+        while current1:
+            results_LL.append(current1.value)
+            current1 = current1.next
+        while current2:
+            results_LL.append(current2.value)
+            current2 = current2.next
+        return str(results_LL)
 
 class TargetError(Exception):
         pass
