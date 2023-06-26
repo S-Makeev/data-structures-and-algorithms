@@ -80,3 +80,11 @@ def test_kth_from_end_size_two_2():
     actual = linked_list.kth_from_end(1)
     expected = "bananas"
     assert actual == expected
+
+
+def test_target_error():
+    try:
+        raise TargetError()
+    except TargetError as error:
+        expected_message = "Target Error"
+        assert error.e == expected_message

@@ -115,4 +115,6 @@ class LinkedList:
         return str(results_LL)
 
 class TargetError(Exception):
-        pass
+    def __init__(self, e="Target Error"):
+        self.e = e
+
