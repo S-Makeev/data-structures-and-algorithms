@@ -7,25 +7,21 @@ class Stack:
   def __init__(self) -> None:
         self.top = None
 
-
-  def push(self, value):
-        new_node = Node(value)
-        if self.top == None:
-           self.top = new_node.value
-        else:
-           new_node.next = self.top
-           self.top = new_node
-
-
-
+  def push(self,value):
+      node = Node(value)
+      if self.top is None:
+          self.top = node
+      else:
+          node.next = self.top
+          self.top = node
 
   def pop(self):
-      if self.to is None:
+      if self.top is None:
           raise Exception
-      del_node = self.top
-      self.top = self.top._next
-      del_node.next = None
-      return del_node.value
+      else:
+          del_node = self.head
+          del_node.next = None
+          return del_node.value
 
 
 # ALGORITHM pop()
