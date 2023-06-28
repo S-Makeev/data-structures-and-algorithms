@@ -83,3 +83,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
    [stack_and_queue](./data_structures/stack_and_queue/README.MD)
    [stack_queue_pseudo](./data_structures/stack_queue_pseudo/README.MD)
    [stack_queue_animal_shelter](./data_structures/stack_queue_animal_shelter/README.MD)
+   [stack_queue_brackets](./data_structures/stack_queue_brackets/README.MD)
