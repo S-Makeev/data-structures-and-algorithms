@@ -8,14 +8,14 @@ def multi_bracket_validation(_str):
     right_bracket = [')', '}', ']']
 
 
-    for char in _str:
-        if char in left_bracket:
-            coolStack.push(char)
-        elif char in right_bracket:
+    for bracket in _str:
+        if bracket in left_bracket:
+            coolStack.push(bracket)
+        elif bracket in right_bracket:
             if coolStack.is_empty():
                 return False
             top = coolStack.pop()
-            if left_bracket.index(top) != right_bracket.index(char):
+            if left_bracket.index(top) != right_bracket.index(bracket):
                 return False
 
     return coolStack.is_empty()
