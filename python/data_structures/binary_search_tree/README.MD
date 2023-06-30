@@ -5,7 +5,7 @@ binary_tree and binary_search_tree
 
 ## Approach & Efficiency
 The BigO of Time: O(n)
-            Space: O(1)
+            Space: O(n)
 ## Tests
 
 Requires installed pytest library.
