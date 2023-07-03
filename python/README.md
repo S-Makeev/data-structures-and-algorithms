@@ -85,3 +85,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
    [stack_queue_animal_shelter](./data_structures/stack_queue_animal_shelter/README.MD)
    [stack_queue_brackets](./data_structures/stack_queue_brackets/README.MD)
    [binary_search_tree](./data_structures/binary_search_tree/README.MD)
+   [test_tree_max](./data_structures/test_tree_max/README.MD)
