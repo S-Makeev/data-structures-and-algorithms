@@ -75,7 +75,7 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
 
-## [array-reverse](./array-insert-shift/README.md)
+   [array-reverse](./array-insert-shift/README.md)
    [array-insert-shift](./array-insert-shift/README.md)
    [linked_list_insertions](./data_structures/linked_list_insertions/README.MD)
    [linked_list_kth](./data_structures/linked_list_kth/README.MD)
@@ -86,3 +86,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
    [stack_queue_brackets](./data_structures/stack_queue_brackets/README.MD)
    [binary_search_tree](./data_structures/binary_search_tree/README.MD)
    [test_tree_max](./data_structures/test_tree_max/README.MD)
+   [tree_breadth_first](./data_structures/tree_breadth_first/README.MD)

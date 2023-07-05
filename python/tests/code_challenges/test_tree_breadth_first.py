@@ -1,14 +1,14 @@
 import pytest
 from data_structures.binary_tree import BinaryTree, Node
 from code_challenges.tree_breadth_first import breadth_first
+from builtins import Exception
 
-
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_exists():
     assert breadth_first
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_rootless_tree():
     tree = BinaryTree()
     expected = []
@@ -16,7 +16,7 @@ def test_rootless_tree():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_single_node():
     tree = BinaryTree()
     tree.root = Node("apples")
@@ -25,7 +25,7 @@ def test_single_node():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_two_nodes():
     tree = BinaryTree()
     tree.root = Node("apples")
@@ -35,7 +35,7 @@ def test_two_nodes():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_four_nodes():
     tree = BinaryTree()
     tree.root = Node("apples")
@@ -47,7 +47,7 @@ def test_four_nodes():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+#@pytest.mark.skip("TODO")
 def test_example_from_reading():
     """
     We build these out by hand because the example has some gaps
@@ -90,3 +90,21 @@ def test_example_from_reading():
     actual = breadth_first(tree)
 
     assert actual == expected
+
+def test_hitchcock_uneven_nodes():
+    tree = BinaryTree()
+    tree.root = Node("vertigo")
+    tree.root.left = Node("scream")
+    tree.root.left.left = Node("camera")
+    tree.root.right = Node("birds")
+    tree.root.right.right = Node("disappearance")
+
+    expected = ["vertigo", "scream", "birds", "camera", "disappearance"]
+    actual = breadth_first(tree)
+    assert actual == expected
+
+def test_find_max_value_empty_tree():
+    tree = BinaryTree()
+    with pytest.raises(Exception) as e:
+        tree.find_maximum_value()
+    assert str(e.value) == 'Tree is empty.'
