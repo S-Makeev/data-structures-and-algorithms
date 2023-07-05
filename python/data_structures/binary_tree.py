@@ -1,13 +1,13 @@
 class Node:
-    def __init__(self, value, left=None, right=None):
+     def __init__(self, value):
         self.value = value
-        self.left = left
-        self.right = right
+        self.left = None
+        self.right = None
 
 
 class BinaryTree:
-    def __init__(self, root=None):
-        self.root = root
+    def __init__(self):
+        self.root = None
 
 
     def pre_order(self, values=[]):
@@ -45,7 +45,7 @@ class BinaryTree:
 
     def find_maximum_value(self):
         if self.root is None:
-            raise Exception("no values inside the tree")
+            raise Exception("Tree is empty.")
 
         max_value = None
 
