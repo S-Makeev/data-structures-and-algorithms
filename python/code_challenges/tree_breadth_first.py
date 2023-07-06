@@ -1,6 +1,7 @@
 from data_structures.binary_tree import BinaryTree, Node
 from data_structures.queue import Queue
 
+
 def breadth_first(tree):
     if tree.root is None:
         return []
@@ -13,11 +14,8 @@ def breadth_first(tree):
         front = breadth.dequeue()
         result.append(front.value)
 
-        if front.left is not None:
-            breadth.enqueue(front.left)
-
-        if front.right is not None:
-            breadth.enqueue(front.right)
+        for child in front.children:
+            breadth.enqueue(child)
 
     return result
 

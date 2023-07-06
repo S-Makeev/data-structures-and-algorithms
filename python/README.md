@@ -87,3 +87,4 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
    [binary_search_tree](./data_structures/binary_search_tree/README.MD)
    [test_tree_max](./data_structures/test_tree_max/README.MD)
    [tree_breadth_first](./data_structures/tree_breadth_first/README.MD)
+   [tree_fizz_buzz](./data_structures/tree_fizz_buzz/README.MD)
