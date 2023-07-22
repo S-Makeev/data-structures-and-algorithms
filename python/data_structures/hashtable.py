@@ -29,6 +29,7 @@ class Hashtable:
                 current = current.next
 
             new_node = Node(key, value)
+            print(new_node)
             current.next = new_node
 
 
@@ -38,6 +39,7 @@ class Hashtable:
         current = self._buckets[index]
         while current:
             if current.key == key:
+                print(current.value)
                 return current.value
             current = current.next
 
@@ -58,4 +60,8 @@ class Hashtable:
                 keys_list.append(current.key)
                 current = current.next
         return keys_list
+
+
+if __name__== "__main__":
+    pass
 
