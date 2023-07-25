@@ -1,5 +1,5 @@
 class Node:
-     def __init__(self, value):
+    def __init__(self, value):
         self.value = value
         self.left = None
         self.right = None
@@ -8,7 +8,6 @@ class Node:
 class BinaryTree:
     def __init__(self):
         self.root = None
-
 
     def pre_order(self, values=[]):
         def walk(input_node, value_list):
@@ -21,15 +20,16 @@ class BinaryTree:
         walk(self.root, values)
         return values
 
-    def in_order(self, values=[]):
-        def walk(input_node, value_list):
+    def in_order(self):
+        values = []
+        def walk(input_node):
             if not input_node:
                 return
-            walk(input_node.left, value_list)
-            value_list.append(input_node.value)
-            walk(input_node.right, value_list)
+            walk(input_node.left)
+            values.append(input_node.value)
+            walk(input_node.right)
 
-        walk(self.root, values)
+        walk(self.root)
         return values
 
     def post_order(self, values=[]):
