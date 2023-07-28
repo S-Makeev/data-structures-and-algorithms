@@ -6,7 +6,7 @@ def test_exists():
     assert Graph
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_node():
 
     graph = Graph()
@@ -18,7 +18,7 @@ def test_add_node():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_size_empty():
 
     graph = Graph()
@@ -30,7 +30,7 @@ def test_size_empty():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_size():
 
     graph = Graph()
@@ -44,7 +44,7 @@ def test_size():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_edge():
     g = Graph()
     apple = g.add_node("apple")
@@ -56,7 +56,7 @@ def test_add_edge():
     assert neighbors[0].weight == 5
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_bouquet():
     g = Graph()
     apple = g.add_node("apple")
@@ -67,7 +67,7 @@ def test_bouquet():
     assert neighbors[0].weight == 10
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_edge_interloper_start():
 
     graph = Graph()
@@ -80,7 +80,7 @@ def test_add_edge_interloper_start():
         graph.add_edge(start, end)
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_add_edge_interloper_end():
 
     graph = Graph()
@@ -93,7 +93,7 @@ def test_add_edge_interloper_end():
         graph.add_edge(start, end)
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_get_nodes():
 
     graph = Graph()
@@ -106,12 +106,12 @@ def test_get_nodes():
 
     expected = 2
 
-    actual = len(graph.get_nodes())
+    actual = len(graph.get_vertices())
 
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_get_neighbors():
 
     graph = Graph()
@@ -131,3 +131,22 @@ def test_get_neighbors():
     assert neighbor_edge.vertex.value == "banana"
 
     assert neighbor_edge.weight == 44
+
+
+def test_add_multiple_edges():
+    graph = Graph()
+    node_a = graph.add_node("A")
+    node_b = graph.add_node("B")
+    node_c = graph.add_node("C")
+    graph.add_edge(node_a, node_b, 5)
+    graph.add_edge(node_a, node_c, 8)
+    neighbors_of_a = graph.get_neighbors(node_a)
+    assert len(neighbors_of_a) == 2
+    neighbor_values = {neighbor.vertex.value for neighbor in neighbors_of_a}
+    assert "B" in neighbor_values
+    assert "C" in neighbor_values
+    for neighbor in neighbors_of_a:
+        if neighbor.vertex.value == "B":
+            assert neighbor.weight == 5
+        elif neighbor.vertex.value == "C":
+            assert neighbor.weight == 8
